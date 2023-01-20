@@ -1,0 +1,24 @@
+.sub-select-child{
+    margin-right: 10px;
+}
+
+.sub-select-child > .css-gcwvw8-MuiAutocomplete-root {
+    width: 180px !important;
+}
+
+.topic-select-child > .css-gcwvw8-MuiAutocomplete-root {
+    width: 180px !important;
+}
+
+.sub-select-child > .MuiAutocomplete-root > .MuiFormControl-root > .MuiFormLabel-root {
+   top:-8px !important;
+}
+
+.topic-select-child > .MuiAutocomplete-root > .MuiFormControl-root > .MuiFormLabel-root {
+    top:-8px !important;
+}
+
+.sub-select-child > .MuiAutocomplete-root > .MuiFormControl-root > .css-gcwvw8-MuiAutocomplete-root ,.MuiOutlinedInput-root{
+    padding: 0px !important;
+    height: 35px !important;
+}

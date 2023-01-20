@@ -1,14 +1,17 @@
 import React from "react";
 import { Box, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { LogoMobile } from "./logo";
-
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import InfoIcon from "@mui/icons-material/Info";
 function MobileMenu(props) {
   const { handleOpenNavMenu, anchorElNav, handleCloseNavMenu, pages } = props;
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+      <Box
+        sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+        style={{ justifyContent: "right" }}
+      >
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -17,7 +20,7 @@ function MobileMenu(props) {
           onClick={handleOpenNavMenu}
           color="inherit"
         >
-          <MenuIcon />
+          <InfoIcon />
         </IconButton>
 
         <Menu
@@ -45,8 +48,6 @@ function MobileMenu(props) {
           ))}
         </Menu>
       </Box>
-
-      <LogoMobile />
     </>
   );
 }
