@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AutoComplete from "../Library/AutoComplete";
-import { topics } from "../Data/topics";
+import AutoComplete from "../../Library/AutoComplete";
+import { topics } from "../../Data/topics";
 import "./style.css";
 // const options =
 

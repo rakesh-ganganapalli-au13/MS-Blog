@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import "./App.css";
-import Comp from "./Components/index";
+import Comp from "./Components/SubjectDropdown";
 import Header from "./Pages/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import routeComponents from "./Routes";

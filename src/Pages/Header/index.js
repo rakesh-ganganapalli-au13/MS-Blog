@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MobileViewMenu from "./mobile-menu";
-import Subject from "../../Components/index";
+import Subject from "../../Components/SubjectDropdown";
 import LeftNav from "./Leftbar";
 import { endPoints } from "../../Utils/routeEndPoints";
 import { useNavigate } from "react-router-dom";
