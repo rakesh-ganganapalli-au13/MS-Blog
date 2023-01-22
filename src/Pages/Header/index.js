@@ -7,12 +7,17 @@ import Button from "@mui/material/Button";
 import MobileViewMenu from "./mobile-menu";
 import Subject from "../../Components/index";
 import LeftNav from "./Leftbar";
+import { endPoints } from "../../Utils/routeEndPoints";
+import { useNavigate } from "react-router-dom";
 
-const pages = ["Home", "About Us", "Contact"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-const settings1 = ["SignIn"];
+const pages = [
+  { label: "Home", url: endPoints.home },
+  { label: "About Us", url: endPoints.about },
+  { label: "Contact", url: endPoints.contactUs },
+];
 
 function ResponsiveAppBar() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -23,7 +28,8 @@ function ResponsiveAppBar() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (url) => {
+    navigate(url);
     setAnchorElNav(null);
   };
 
@@ -41,10 +47,10 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => handleCloseNavMenu(page.url)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.label}
               </Button>
             ))}
           </Box>

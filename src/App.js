@@ -1,15 +1,24 @@
 import { Box } from "@mui/material";
 import "./App.css";
-import Rouets from "./Components/index";
-import Layout from "./Pages";
+import Comp from "./Components/index";
+import Header from "./Pages/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import routeComponents from "./Routes";
 
 function App() {
   return (
     <div className="App">
-      <Layout />
-      <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-        <Rouets />
-      </Box>
+      <Router>
+        <Header />
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Comp />
+        </Box>
+        <Routes>
+          {routeComponents.map((i, idx) => {
+            return <Route path={i.path} element={i.component} key={idx} />;
+          })}
+        </Routes>
+      </Router>
     </div>
   );
 }

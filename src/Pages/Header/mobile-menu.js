@@ -42,8 +42,8 @@ function MobileMenu(props) {
           }}
         >
           {pages.map((page) => (
-            <MenuItem key={page} onClick={handleCloseNavMenu}>
-              <Typography textAlign="center">{page}</Typography>
+            <MenuItem key={page} onClick={() => handleCloseNavMenu(page.url)}>
+              <Typography textAlign="center">{page.label}</Typography>
             </MenuItem>
           ))}
         </Menu>
