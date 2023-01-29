@@ -9,6 +9,7 @@ import Subject from "../../Components/SubjectsTopics";
 import LeftNav from "./Leftbar";
 import { endPoints } from "../../Utils/routeEndPoints";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 const pages = [
   { label: "Home", url: endPoints.home },
@@ -34,7 +35,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed" className="header-custom-class">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <LeftNav /> */}
