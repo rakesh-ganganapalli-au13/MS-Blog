@@ -8,7 +8,7 @@ function Routes() {
   const [subjects, setSubjects] = useState([]);
   const [selctSubject, setSelectSubject] = useState("");
   const [subTopics, setSubTopics] = useState([]);
-  const [selectedTopic, setSelectedTopic] = useState();
+  const [selectedTopic, setSelectedTopic] = useState("");
 
   useEffect(() => {
     const sub = Object.keys(topics);
@@ -17,8 +17,9 @@ function Routes() {
   }, []);
 
   useEffect(() => {
-    if (selctSubject.length) {
+    if (selctSubject) {
       const subTopics = topics[selctSubject];
+      setSelectedTopic("");
       if (subTopics) {
         const topicsObj = subTopics.map((i) => ({ label: i, value: i }));
         setSubTopics(topicsObj);
@@ -31,11 +32,16 @@ function Routes() {
   }, [selctSubject]);
 
   const changeFunc = (e) => {
-    setSelectSubject(e.target.value);
+    if (e?.value) {
+      setSelectSubject(e.value);
+    } else {
+      setSelectedTopic("");
+      setSelectSubject("");
+    }
   };
 
   const changeTopicFunc = (e) => {
-    setSelectedTopic(e.target.value);
+    setSelectedTopic(e?.value);
   };
 
   return (
@@ -49,6 +55,7 @@ function Routes() {
             options={subjects}
             label="Subject"
             onChange={changeFunc}
+            value={selctSubject}
           />
         </div>
         <div className="topic-select-child" key="topic-select-child">
@@ -56,6 +63,7 @@ function Routes() {
             options={subTopics}
             label="Topic"
             onChange={changeTopicFunc}
+            value={selectedTopic}
           />
         </div>
       </div>
