@@ -9,7 +9,7 @@ import Subject from "../../Components/SubjectsTopics";
 import LeftNav from "./Leftbar";
 import { endPoints } from "../../Utils/routeEndPoints";
 import { useNavigate } from "react-router-dom";
-import "./style.css";
+import "./style.scss";
 
 const pages = [
   { label: "Home", url: endPoints.home },
