@@ -4,7 +4,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import InfoIcon from "@mui/icons-material/Info";
 function MobileMenu(props) {
-  const { handleOpenNavMenu, anchorElNav, handleCloseNavMenu, pages } = props;
+  const {
+    handleOpenNavMenu,
+    anchorElNav,
+    handleCloseNavMenu,
+    pages,
+    handleCloseNavMenuDropdown,
+  } = props;
 
   return (
     <>
@@ -36,13 +42,16 @@ function MobileMenu(props) {
             horizontal: "left",
           }}
           open={Boolean(anchorElNav)}
-          onClose={handleCloseNavMenu}
+          onClose={handleCloseNavMenuDropdown}
           sx={{
             display: { xs: "block", md: "none" },
           }}
         >
           {pages.map((page) => (
-            <MenuItem key={page} onClick={() => handleCloseNavMenu(page.url)}>
+            <MenuItem
+              key={page.label}
+              onClick={() => handleCloseNavMenu(page.url)}
+            >
               <Typography textAlign="center">{page.label}</Typography>
             </MenuItem>
           ))}

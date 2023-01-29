@@ -44,14 +44,14 @@ function Routes() {
         style={{ display: "flex", marginTop: "10px", justifyContent: "center" }}
         className="sub-select-parent"
       >
-        <div className="sub-select-child">
+        <div className="sub-select-child" key="sub-select-child">
           <AutoComplete
             options={subjects}
             label="Subject"
             onChange={changeFunc}
           />
         </div>
-        <div className="topic-select-child">
+        <div className="topic-select-child" key="topic-select-child">
           <AutoComplete
             options={subTopics}
             label="Topic"

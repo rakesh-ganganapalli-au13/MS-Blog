@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MobileViewMenu from "./mobile-menu";
-import Subject from "../../Components/SubjectDropdown";
+import Subject from "../../Components/SubjectsTopics";
 import LeftNav from "./Leftbar";
 import { endPoints } from "../../Utils/routeEndPoints";
 import { useNavigate } from "react-router-dom";
@@ -19,35 +19,31 @@ const pages = [
 function ResponsiveAppBar() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
-  const handleCloseNavMenu = (url) => {
-    navigate(url);
+  const handleCloseNavMenuDropdown = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const handleCloseNavMenuOnSelectOption = (url) => {
+    navigate(url);
+    setAnchorElNav(null);
   };
 
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <LeftNav />
+          {/* <LeftNav /> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={() => handleCloseNavMenu(page.url)}
+                key={page.label}
+                onClick={() => handleCloseNavMenuOnSelectOption(page.url)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page.label}
@@ -58,7 +54,8 @@ function ResponsiveAppBar() {
           <MobileViewMenu
             handleOpenNavMenu={handleOpenNavMenu}
             anchorElNav={anchorElNav}
-            handleCloseNavMenu={handleCloseNavMenu}
+            handleCloseNavMenu={handleCloseNavMenuOnSelectOption}
+            handleCloseNavMenuDropdown={handleCloseNavMenuDropdown}
             pages={pages}
           />
 
@@ -70,4 +67,5 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;
