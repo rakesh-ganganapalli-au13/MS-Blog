@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AutoComplete from "../../Library/AutoComplete";
 import { topics } from "../../Data/topics";
-import "./style.css";
+import "./style.scss";
 // const options =
 
 function Routes() {
@@ -41,7 +41,7 @@ function Routes() {
   return (
     <>
       <div
-        style={{ display: "flex", marginTop: "10px", justifyContent: "center" }}
+        style={{ display: "flex", justifyContent: "center" }}
         className="sub-select-parent"
       >
         <div className="sub-select-child" key="sub-select-child">

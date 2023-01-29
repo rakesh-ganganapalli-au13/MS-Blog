@@ -12,7 +12,7 @@ export default function ComboBox(props) {
       onSelect={onChange}
       options={options}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label={label} />}
+      renderInput={(params) => <TextField {...params} placeholder={label} />}
     />
   );
 }
