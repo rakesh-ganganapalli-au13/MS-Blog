@@ -1,0 +1,26 @@
+variants :
+
+    Main heading    : h1
+    Main heading2   : h2
+    Main heading3    :h3
+    Main heading4    :h4
+    Main heading5    :h5
+    Main heading6    :h6
+    Sub heading      :subtitle1
+    Sub heading2     :subtitle2
+            Body    :body1
+            Body2    :body2
+          button    :button
+        Caption    :caption
+        overling    :overline
+
+reference : https://mui.com/material-ui/customization/typography
+
+
+content format : 
+
+    {
+      type:"type of content" (ex:text,image,video,audio)
+      variant : one of the above variants (default body)
+      content : content that need to show
+    }

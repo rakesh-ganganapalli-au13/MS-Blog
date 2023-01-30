@@ -9,7 +9,8 @@ export default function ComboBox(props) {
     <Autocomplete
       disablePortal
       value={value}
-      freeSolo={true}
+      // isOptionEqualToValue={(option, value) => option.value !== value.value}
+      // freeSolo={true}
       id="combo-box-demo"
       onChange={(_event, newTerm) => onChange(newTerm)}
       options={options}

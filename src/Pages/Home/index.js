@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { subjectSelector } from "../../Components/SubjectsTopics/redux/compnent.slice";
+import ContentManagement from "../../Components/ContentControl";
 
 function Home() {
-  return (
+  const subjectTopicSelector = useSelector(subjectSelector);
+  const [subject, setSubject] = useState("");
+  const [topic, setTopic] = useState("");
+
+  useEffect(() => {
+    if (subjectTopicSelector.subject && subjectTopicSelector.topic) {
+      setSubject(subjectTopicSelector.subject);
+      setTopic(subjectTopicSelector.topic);
+    } else {
+      setSubject("");
+      setTopic("");
+    }
+  }, [subjectTopicSelector]);
+
+  return subject && topic ? (
+    <ContentManagement sub={subject} topic={topic} />
+  ) : (
     <div>
       <p>
         What Is Meant By Lorem Ipsum In Website? The word Lorem Ipsum is derived

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -17,7 +17,7 @@ const pages = [
   { label: "Contact", url: endPoints.contactUs },
 ];
 
-function ResponsiveAppBar() {
+function Header() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -35,38 +35,40 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed" className="header-custom-class">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          {/* <LeftNav /> */}
+    <>
+      <AppBar position="fixed" className="header-custom-class">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            {/* <LeftNav /> */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.label}
-                onClick={() => handleCloseNavMenuOnSelectOption(page.url)}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page.label}
-              </Button>
-            ))}
-          </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page.label}
+                  onClick={() => handleCloseNavMenuOnSelectOption(page.url)}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.label}
+                </Button>
+              ))}
+            </Box>
 
-          <MobileViewMenu
-            handleOpenNavMenu={handleOpenNavMenu}
-            anchorElNav={anchorElNav}
-            handleCloseNavMenu={handleCloseNavMenuOnSelectOption}
-            handleCloseNavMenuDropdown={handleCloseNavMenuDropdown}
-            pages={pages}
-          />
+            <MobileViewMenu
+              handleOpenNavMenu={handleOpenNavMenu}
+              anchorElNav={anchorElNav}
+              handleCloseNavMenu={handleCloseNavMenuOnSelectOption}
+              handleCloseNavMenuDropdown={handleCloseNavMenuDropdown}
+              pages={pages}
+            />
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Subject />
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <Subject />
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </>
   );
 }
 
-export default ResponsiveAppBar;
+export default Header;

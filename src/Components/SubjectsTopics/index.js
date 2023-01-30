@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import AutoComplete from "../../Library/AutoComplete";
 import { topics } from "../../Data/topics";
 import "./style.scss";
+import { changeSubName, changeTopicName } from "./redux/compnent.slice";
+import { useDispatch } from "react-redux";
 // const options =
 
 function Routes() {
+  const dispatch = useDispatch();
   const [subjects, setSubjects] = useState([]);
   const [selctSubject, setSelectSubject] = useState("");
   const [subTopics, setSubTopics] = useState([]);
@@ -34,14 +37,18 @@ function Routes() {
   const changeFunc = (e) => {
     if (e?.value) {
       setSelectSubject(e.value);
+      dispatch(changeSubName({ subject: e.value }));
     } else {
       setSelectedTopic("");
       setSelectSubject("");
+      dispatch(changeSubName({ subject: "" }));
+      dispatch(changeTopicName({ topic: "" }));
     }
   };
 
   const changeTopicFunc = (e) => {
     setSelectedTopic(e?.value);
+    dispatch(changeTopicName({ topic: e.value }));
   };
 
   return (
