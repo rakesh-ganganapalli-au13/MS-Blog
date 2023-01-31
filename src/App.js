@@ -6,6 +6,7 @@ import routeComponents from "./Routes";
 import styled from "@emotion/styled";
 import Error from "./Pages/Error/404";
 import { useEffect } from "react";
+import Loader from "./Library/Loader";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Header />
         <Offset />
+
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <Comp />
         </Box>
