@@ -21,6 +21,7 @@ content format :
 
     {
       type:"type of content" (ex:text,image,video,audio)
+      position:"position of content(ex:center,left,right)
       variant : one of the above variants (default body)
       content : content that need to show
     }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AutoComplete from "../../Library/AutoComplete";
-import { topics } from "../../Data/topics";
+import topiccs from "../../Pages/SubjectsContent";
 import "./style.scss";
 import { changeSubName, changeTopicName } from "./redux/compnent.slice";
 import { useDispatch } from "react-redux";
@@ -13,16 +13,18 @@ function Routes() {
   const [subTopics, setSubTopics] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState("");
 
+  //subject dropdown data arrengement
   useEffect(() => {
-    const sub = Object.keys(topics);
+    const sub = Object.keys(topiccs);
     const sub1 = sub.map((i) => ({ label: i, value: i }));
     setSubjects(sub1);
   }, []);
 
+  //topics arrengement based on
   useEffect(() => {
     if (selctSubject) {
-      const subTopics = topics[selctSubject];
       setSelectedTopic("");
+      const subTopics = Object.keys(topiccs[selctSubject]);
       if (subTopics) {
         const topicsObj = subTopics.map((i) => ({ label: i, value: i }));
         setSubTopics(topicsObj);
