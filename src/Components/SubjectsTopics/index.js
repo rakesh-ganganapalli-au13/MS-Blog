@@ -4,10 +4,15 @@ import topiccs from "../../Pages/SubjectsContent";
 import "./style.scss";
 import { changeSubName, changeTopicName } from "./redux/compnent.slice";
 import { useDispatch } from "react-redux";
-// const options =
+import { CustomSearchIcon } from "../../Library/Icons";
+import { useNavigate } from "react-router-dom";
+import { endPoints } from "../../Utils/routeEndPoints";
+import Toast from "../../Library/Toast/toast";
+import { errorMessage } from "../../Utils/errorMessages";
 
 function Routes() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [subjects, setSubjects] = useState([]);
   const [selctSubject, setSelectSubject] = useState("");
   const [subTopics, setSubTopics] = useState([]);
@@ -39,7 +44,7 @@ function Routes() {
   const changeFunc = (e) => {
     if (e?.value) {
       setSelectSubject(e.value);
-      dispatch(changeSubName({ subject: e.value }));
+      // dispatch(changeSubName({ subject: e.value }));
     } else {
       setSelectedTopic("");
       setSelectSubject("");
@@ -49,14 +54,33 @@ function Routes() {
   };
 
   const changeTopicFunc = (e) => {
-    setSelectedTopic(e?.value);
-    dispatch(changeTopicName({ topic: e.value }));
+    if (e?.value) {
+      setSelectedTopic(e.value);
+      // dispatch(changeTopicName({ topic: e?.value }));
+    } else {
+      setSelectedTopic("");
+      // dispatch(changeTopicName({ topic: "" }));
+    }
+  };
+
+  const handleSearchClick = () => {
+    if (!selctSubject || !selectedTopic) {
+      Toast.error(errorMessage["Please enter data"]);
+    } else {
+      dispatch(changeSubName({ subject: selctSubject }));
+      dispatch(changeTopicName({ topic: selectedTopic }));
+      navigate(endPoints.home);
+    }
   };
 
   return (
     <>
       <div
-        style={{ display: "flex", justifyContent: "center" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         className="sub-select-parent"
       >
         <div className="sub-select-child" key="sub-select-child">
@@ -74,6 +98,9 @@ function Routes() {
             onChange={changeTopicFunc}
             value={selectedTopic}
           />
+        </div>
+        <div className="header-search-icon">
+          <CustomSearchIcon onClick={handleSearchClick} />
         </div>
       </div>
     </>

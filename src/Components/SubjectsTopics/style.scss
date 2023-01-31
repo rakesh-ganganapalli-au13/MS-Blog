@@ -1,3 +1,5 @@
+@use '../../Sass/variables' as v;
+
 .sub-select-child{
     margin-right: 10px;
 }
@@ -29,4 +31,24 @@
 
 .topic-select-child > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root{
     background-color: white !important;
+}
+
+.header-search-icon > .MuiSvgIcon-root {
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.header-search-icon {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.header-search-icon:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+    .header-search-icon > .MuiSvgIcon-root {
+       color:v.$primary-color
+    }
 }

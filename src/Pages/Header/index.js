@@ -10,6 +10,11 @@ import LeftNav from "./Leftbar";
 import { endPoints } from "../../Utils/routeEndPoints";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
+import { useDispatch } from "react-redux";
+import {
+  changeSubName,
+  changeTopicName,
+} from "../../Components/SubjectsTopics/redux/compnent.slice";
 
 const pages = [
   { label: "Home", url: endPoints.home },
@@ -20,7 +25,7 @@ const pages = [
 function Header() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
-
+  const dispatch = useDispatch();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -30,8 +35,14 @@ function Header() {
   };
 
   const handleCloseNavMenuOnSelectOption = (url) => {
-    navigate(url);
-    setAnchorElNav(null);
+    if (url == endPoints.home) {
+      dispatch(changeSubName({ subject: "" }));
+      dispatch(changeTopicName({ topic: "" }));
+      navigate(url);
+    } else {
+      navigate(url);
+      setAnchorElNav(null);
+    }
   };
 
   return (
