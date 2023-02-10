@@ -16,7 +16,7 @@ const topic1 = [
     type: "list",
     variant: "unOrder",
     position: "center",
-    content: ["a", "b", "c", "d"],
+    content: ["amm", "b", "c", "d"],
   },
   {
     type: "text",

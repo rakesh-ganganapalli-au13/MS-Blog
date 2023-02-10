@@ -1,3 +1,3 @@
 export const errorMessage = {
-  "Please enter data": "Please enter data",
+  "Please Enter Subject or Topic": "Please Enter Subject or Topic",
 };

@@ -3,13 +3,16 @@ import topics from "../../Pages/SubjectsContent/index";
 import CustomResponsiveFont from "../../Library/Typography";
 import CustomImage from "./image";
 import { OrderList, UnorderList } from "./list";
+import { useLocation } from "react-router-dom";
 
 function ContentArrengement({ sub, topic }) {
+  const location = useLocation();
+  console.log("lc", location.state);
   const [content, setContent] = useState([]);
 
   useEffect(() => {
     setContent(topics[sub][topic]);
-  }, [topic]);
+  }, [sub, topic]);
 
   return (
     <>
@@ -32,11 +35,15 @@ function ContentArrengement({ sub, topic }) {
           </div>
         ) : i.type == "list" && i.variant == "order" ? (
           <div key={idx}>
-            <OrderList list={i.content} position={i.position} />
+            <OrderList list={i.content} position={i.position} width={i.width} />
           </div>
         ) : i.type == "list" && i.variant == "unOrder" ? (
           <div key={idx}>
-            <UnorderList list={i.content} position={i.position} />
+            <UnorderList
+              list={i.content}
+              position={i.position}
+              width={i.width}
+            />
           </div>
         ) : (
           ""

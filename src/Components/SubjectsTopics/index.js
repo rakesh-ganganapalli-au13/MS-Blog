@@ -65,13 +65,28 @@ function Routes() {
 
   const handleSearchClick = () => {
     if (!selctSubject || !selectedTopic) {
-      Toast.error(errorMessage["Please enter data"]);
+      Toast.error(errorMessage["Please Enter Subject or Topic"]);
     } else {
       dispatch(changeSubName({ subject: selctSubject }));
       dispatch(changeTopicName({ topic: selectedTopic }));
-      navigate(endPoints.home);
+      // navigate(endPoints.content, {
+      //   state: { sub: selctSubject, topic: selectedTopic },
+      // });
     }
   };
+
+  // const handleKeyDown = (e) => {
+  //   // console.log("e", e.key);
+  //   if (e.key == "Enter") {
+  //     if (!selctSubject || !selectedTopic) {
+  //       Toast.error(errorMessage["Please Enter Subject or Topic"]);
+  //     } else {
+  //       dispatch(changeSubName({ subject: selctSubject }));
+  //       dispatch(changeTopicName({ topic: selectedTopic }));
+  //       navigate(endPoints.home);
+  //     }
+  //   }
+  // };
 
   return (
     <>
@@ -82,6 +97,7 @@ function Routes() {
           alignItems: "center",
         }}
         className="sub-select-parent"
+        // onKeyDown={handleKeyDown}
       >
         <div className="sub-select-child" key="sub-select-child">
           <AutoComplete

@@ -3,4 +3,5 @@ export const endPoints = {
   home: "/",
   contactUs: "/contact-us",
   help: "/help",
+  content: "/content",
 };

@@ -16,7 +16,13 @@ const topic1 = [
     type: "list",
     variant: "unOrder",
     position: "center",
-    content: ["amm", "b", "c", "d"],
+    content: [
+      "amm",
+      "bakslds",
+      "c",
+      "ajkskj akjkdji ksjdkjid kaidijdd  oajksk klaioaskn oajijidn oajd oaijsijd aojs oa",
+    ],
+    width: 360,
   },
   {
     type: "text",
@@ -35,6 +41,13 @@ const topic1 = [
     variant: "h3",
     position: "center",
     content: "Grab your magnifying glass and jump into digital forensics!",
+  },
+  {
+    type: "image",
+    position: "center",
+    alternativeInformation: "demo-image",
+    source:
+      "https://th.bing.com/th/id/R.4aa108082e7d3cbd55add79f84612aaa?rik=QicPTU9DlSkXsQ&pid=ImgRaw&r=0",
   },
   {
     type: "text",

@@ -1,3 +1,9 @@
 .custom-unorder-list,.custom-unorder-list{
     list-style-position: inside;
 }
+
+.custom-list > ul > li {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 4px !important;
+}

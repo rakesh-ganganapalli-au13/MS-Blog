@@ -1,7 +1,9 @@
 import sample1 from "./DiditolForensics/Topic1";
 import sample2 from "./DiditolForensics/Topic2";
+import nodejsTopics from "./NodeJs/0topics";
 import subjectNames from "../../Utils/subjectVariables";
-
+import disttutoto1 from "./DistrubutedSystems/Tutorials/Tutorial-1";
+import distrTopics from "./DistrubutedSystems/topics";
 /*
 data model : 
 [subjectNames.digitolForensics] is a subject name
@@ -10,7 +12,13 @@ data model :
 */
 
 const topics = {
-  [subjectNames.digitolForensics]: { topic1: sample1, topic2: sample2 },
+  [subjectNames.distrubutedSystems]: { topics: distrTopics },
+  [subjectNames.penatrationTesting]: { topic1: sample1 },
+  [subjectNames.digitolForensics]: { topic1: sample1 },
+  [subjectNames.reactJs]: { topic1: sample1 },
+  [subjectNames.nodeJs]: { topics: nodejsTopics },
+  [subjectNames.reactNative]: { topic1: sample1 },
+  [subjectNames.dataStructures]: { topic1: sample1 },
 };
 
 export default topics;

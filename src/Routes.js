@@ -3,6 +3,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
 import Help from "./Pages/Help";
+import ContentArrengement from "./Components/ContentControl";
 
 const routes = [
   {
@@ -23,6 +24,12 @@ const routes = [
   {
     component: <Help />,
     path: endPoints.help,
+    breadcrumb: "Help",
+  },
+
+  {
+    component: <ContentArrengement />,
+    path: endPoints.content,
     breadcrumb: "Help",
   },
 ];

@@ -25,3 +25,9 @@ content format :
       variant : one of the above variants (default body)
       content : content that need to show
     }
+
+
+  list format : 
+    width : tells about the placement of text
+      ex : 360 (middle of page)
+         : 100% (from starting of page)
