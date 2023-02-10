@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 
 function ContentArrengement({ sub, topic }) {
   const location = useLocation();
-  console.log("lc", location.state);
   const [content, setContent] = useState([]);
 
   useEffect(() => {
