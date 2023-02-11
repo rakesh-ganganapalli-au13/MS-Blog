@@ -65,7 +65,7 @@ function Routes() {
 
   const handleSearchClick = () => {
     if (!selctSubject || !selectedTopic) {
-      Toast.error(errorMessage["Please Enter Subject or Topic"]);
+      Toast.warning(errorMessage["Please Enter Subject or Topic"]);
     } else {
       dispatch(changeSubName({ subject: selctSubject }));
       dispatch(changeTopicName({ topic: selectedTopic }));

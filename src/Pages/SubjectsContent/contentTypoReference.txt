@@ -27,7 +27,19 @@ content format :
     }
 
 
-  list format : 
+list format : 
     width : tells about the placement of text
       ex : 360 (middle of page)
          : 100% (from starting of page)
+
+image format : 
+  {
+    type: "image",
+    position: "center",
+    alternativeInformation: "",
+    source:"",
+  },
+
+text format : it should be string or html format
+  ex : 1."my content"
+       2.<text>My content</text>

@@ -1,59 +1,96 @@
+import { distributedSystems } from "../../../../../Utils/images";
+import { primaryColor } from "../../../../../Utils/staticData";
+import { UnorderList } from "../../../../../Components/ContentControl/list";
+
 const topic1 = [
   {
-    type: "text",
-    position: "center",
-    variant: "h4",
-    content: "Grab your magnifying glass and jump into digital forensics!",
+    type: "title",
+    style: {
+      marginBottom: "1%",
+      // textAlign: "le",
+    },
+    variant: "h5",
+    content: "What is a Distributed System?",
+    marginBottom: "10px",
   },
+
   {
     type: "text",
     variant: "body1",
-    position: "center",
-    content:
-      "Learning about cyber security often means understanding different attacks and how to prevent them. But cyber criminals are constantly finding new techniques, and not every cyber security attack can be avoided! So, what happens after a cyber security incident occurs? This is where digital forensics comes into play.Let’s start with a basic overview in this quick beginner’s guide!",
+    content: (
+      <>
+        Distributed System is a collection of autonomous computer systems that
+        are physically separated but are connected by a centralized computer
+        network that is equipped with "<b>distributed system software</b>"
+      </>
+    ),
   },
-  {
-    type: "list",
-    variant: "unOrder",
-    position: "center",
-    content: [
-      "amm",
-      "bakslds",
-      "c",
-      "ajkskj akjkdji ksjdkjid kaidijdd  oajksk klaioaskn oajijidn oajd oaijsijd aojs oa",
-    ],
-    width: 360,
-  },
-  {
-    type: "text",
-    variant: "body1",
-    position: "center",
-    content: "Learning about cyber security often means",
-  },
-  {
-    type: "text",
-    variant: "body1",
-    position: "center",
-    content: "Grab your magnifying glass and jump into digital forensics!",
-  },
-  {
-    type: "text",
-    variant: "h3",
-    position: "center",
-    content: "Grab your magnifying glass and jump into digital forensics!",
-  },
+
   {
     type: "image",
-    position: "center",
-    alternativeInformation: "demo-image",
-    source:
-      "https://th.bing.com/th/id/R.4aa108082e7d3cbd55add79f84612aaa?rik=QicPTU9DlSkXsQ&pid=ImgRaw&r=0",
+    style: {
+      textAlign: "center",
+      width: "50%",
+      height: "50%",
+      marginTop: "2%",
+    },
+    source: distributedSystems["tutorial-1"].image1,
   },
+
   {
     type: "text",
-    variant: "h3",
-    position: "center",
-    content: "Grab your magnifying glass and jump into digital forensics!",
+    variant: "body1",
+    content: (
+      <>
+        <b>Example</b> : Facebook , it has multiple systems, each system has
+        it's own responsibilites like
+        <UnorderList
+          list={[
+            "maintaining user details",
+            "handling friend requests",
+            "chating",
+            "streaming, etc..",
+          ]}
+          position="center"
+          width="360"
+        />
+      </>
+    ),
+    style: {
+      textAlign: "center",
+    },
+  },
+
+  {
+    type: "title",
+    style: {
+      marginBottom: "1%",
+    },
+    variant: "h5",
+    content: "What is a Distributed System Software?",
+    marginBottom: "10px",
+  },
+
+  {
+    type: "text",
+    variant: "body1",
+    content:
+      "Software which enables computers to coordinate their activities and to share the resources such as Hardware, Software, Data, etc.",
+  },
+
+  {
+    type: "text",
+    variant: "body1",
+    content: (
+      <>
+        <b>Database</b>: It is used to store the processed data that are
+        processed by each Node/System of the Distributed systems that are
+        connected to the Centralized network
+      </>
+    ),
+    style: {
+      marginTop: "1%",
+    },
   },
 ];
 

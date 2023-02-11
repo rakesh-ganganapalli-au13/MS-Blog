@@ -16,8 +16,16 @@ function ContentArrengement({ sub, topic }) {
   return (
     <>
       {content.map((i, idx) => {
-        return i.type == "text" ? (
-          <div key={idx} style={{ textAlign: i.position }}>
+        return i.type == "title" ? (
+          <div key={idx} style={i?.style}>
+            <CustomResponsiveFont
+              variant={i.variant}
+              content={i.content}
+              align={i?.position}
+            />
+          </div>
+        ) : i.type == "text" ? (
+          <div key={idx} style={i?.style}>
             <CustomResponsiveFont
               variant={i.variant}
               content={i.content}
@@ -25,23 +33,27 @@ function ContentArrengement({ sub, topic }) {
             />
           </div>
         ) : i.type == "image" ? (
-          <div key={idx} style={{ textAlign: i.position }}>
+          <div key={idx} style={{ textAlign: i?.style?.textAlign }}>
             <CustomImage
               src={i.source}
               alt={i.alternativeInformation}
-              style={{ width: "30%", height: "30%" }}
+              style={i?.style}
             />
           </div>
         ) : i.type == "list" && i.variant == "order" ? (
-          <div key={idx}>
-            <OrderList list={i.content} position={i.position} width={i.width} />
+          <div key={idx} style={i?.style}>
+            <OrderList
+              list={i.content}
+              position={i?.position}
+              width={i?.width}
+            />
           </div>
         ) : i.type == "list" && i.variant == "unOrder" ? (
-          <div key={idx}>
+          <div key={idx} style={i?.style}>
             <UnorderList
               list={i.content}
-              position={i.position}
-              width={i.width}
+              position={i?.position}
+              width={i?.width}
             />
           </div>
         ) : (
