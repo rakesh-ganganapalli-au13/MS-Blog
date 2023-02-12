@@ -1,4 +1,4 @@
-const homepageImage = "./images/home.jpg";
+const homepageImage = "./images/R.gif";
 
 //  "./images/distrubutesSystems/"
 

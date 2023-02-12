@@ -34,7 +34,6 @@ function ContentArrengement({ sub, topic }) {
 
   useEffect(() => {
     setContent(topics[sub][topic]);
-    console.log(topics[sub][topic]);
   }, [sub, topic]);
 
   return (
@@ -54,7 +53,7 @@ function ContentArrengement({ sub, topic }) {
         } else if (i[0] == list) {
           if (i[1]["type"] == orderList)
             return (
-              <div style={i[1]?.style}>
+              <div style={i[1]?.style} key={idx}>
                 <OrderList
                   list={i[1]["content"]}
                   position={i[1]?.style?.textAlign}
@@ -74,7 +73,7 @@ function ContentArrengement({ sub, topic }) {
           return i[1];
         } else if (i[0] == image) {
           return (
-            <div style={{ textAlign: i[1]?.style?.textAlign }}>
+            <div style={{ textAlign: i[1]?.style?.textAlign }} key={idx}>
               <CustomImage src={i[1].src} alt={i[1].alt} style={i[1]?.style} />
             </div>
           );
