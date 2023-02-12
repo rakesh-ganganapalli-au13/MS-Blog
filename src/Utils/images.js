@@ -10,6 +10,8 @@ const distributedSystems = {
     image1: "./images/distrubutesSystems/Tutorial-2/crypto2.gif",
     image2: "./images/distrubutesSystems/Tutorial-2/symentric.jpg",
     image3: "./images/distrubutesSystems/Tutorial-2/symentricEx.png",
+    image4: "./images/distrubutesSystems/Tutorial-2/two-time-pad2.png",
+    image5: "./images/distrubutesSystems/Tutorial-2/block-cipher.png",
   },
 };
 

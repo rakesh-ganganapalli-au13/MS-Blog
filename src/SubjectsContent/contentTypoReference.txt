@@ -44,8 +44,6 @@ text format : it should be string or html format
   ex : 1."my content"
        2.<text>My content</text>
 
-
-
 title
 {
   type: "title",
@@ -77,6 +75,16 @@ image
     },
     source: distributedSystems["tutorial-2"].image1,
   },
+
+
+
+
+
+
+
+
+
+
 
 
 
