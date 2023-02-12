@@ -7,6 +7,7 @@ const introduction = [
     type: "title",
     style: {
       marginBottom: "1%",
+      textAlign: "center",
     },
     variant: "h5",
     content: "What is a Distributed System?",
@@ -64,6 +65,7 @@ const introduction = [
     type: "title",
     style: {
       marginBottom: "1%",
+      textAlign: "center",
     },
     variant: "h5",
     content: "What is a Distributed System Software?",

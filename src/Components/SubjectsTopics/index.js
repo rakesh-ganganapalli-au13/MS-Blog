@@ -92,6 +92,7 @@ function Routes() {
       <div
         style={{
           display: "flex",
+          flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
         }}
