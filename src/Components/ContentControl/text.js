@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import topics from "../../SubjectsContent/index";
 import CustomResponsiveFont from "../../Library/Typography";
+import CustomImage from "./image";
 import { OrderList, UnorderList } from "./list";
-const linebreak = "br";
+import { useLocation } from "react-router-dom";
 const bold = "bold";
 const text = "text";
 const list = "list";
 const orderList = "order";
 const unOrderList = "unorder";
+const linebreak = "br";
+const heading = "heading";
+const component = "component";
+const textTypes = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "subtitle1",
+  "subtitle2",
+  "body1",
+  "body2",
+  "button",
+  "caption",
+  "overline",
+];
+const image = "image";
 
-function CustomText({ content }) {
+function ContentArrengement({ sub, topic }) {
+  const [content, setContent] = useState([]);
+
+  useEffect(() => {
+    setContent(topics[sub][topic]);
+  }, [sub, topic]);
+
   return (
     <>
       {content.map((i, idx) => {
@@ -19,23 +46,17 @@ function CustomText({ content }) {
             <CustomResponsiveFont
               variant="body1"
               content={<b>{i[1]}&nbsp;</b>}
-              componet="span"
-            />
-          );
-        } else if (i[0] == text) {
-          return (
-            <CustomResponsiveFont
-              variant="body1"
-              content={<>{i[1]}&nbsp;</>}
-              componet="span"
+              componet={i[2]?.span && "span"}
+              style={i[2]}
             />
           );
         } else if (i[0] == list) {
           if (i[1]["type"] == orderList)
             return (
-              <div style={i[1]?.style}>
+              <div style={i[1]?.style} key={idx}>
                 <OrderList
                   list={i[1]["content"]}
+                  position={i[1]?.style?.textAlign}
                   style={i[1]?.style}
                   bold={i[1]?.bold}
                 />
@@ -48,10 +69,33 @@ function CustomText({ content }) {
               bold={i[1]?.bold}
             />
           );
+        } else if (i[0] == component) {
+          return i[1];
+        } else if (i[0] == image) {
+          return (
+            <div style={{ textAlign: i[1]?.style?.textAlign }} key={idx}>
+              <CustomImage src={i[1].src} alt={i[1].alt} style={i[1]?.style} />
+            </div>
+          );
+        } else {
+          let a = i[0];
+          function findCherries(va) {
+            return va === a;
+          }
+          let varient = textTypes.find(findCherries);
+          return (
+            <CustomResponsiveFont
+              variant={varient}
+              align={i[2]?.textAlign}
+              content={<>{i[1]}&nbsp;</>}
+              componet={i[2]?.span && "span"}
+              style={i[2]}
+            />
+          );
         }
       })}
     </>
   );
 }
 
-export default CustomText;
+export default ContentArrengement;
