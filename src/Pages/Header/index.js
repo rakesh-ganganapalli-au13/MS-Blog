@@ -39,6 +39,7 @@ function Header() {
       dispatch(changeSubName({ subject: "" }));
       dispatch(changeTopicName({ topic: "" }));
       navigate(url);
+      setAnchorElNav(null);
     } else {
       navigate(url);
       setAnchorElNav(null);

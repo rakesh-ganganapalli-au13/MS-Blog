@@ -7,6 +7,9 @@ import styled from "@emotion/styled";
 import Error from "./Pages/Error/404";
 import { useEffect } from "react";
 import Loader from "./Library/Loader";
+import "./Sass/main.scss";
+import ContentCard from "./Components/ContentGrid";
+import CustomText from "./Components/ContentControl/text";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 

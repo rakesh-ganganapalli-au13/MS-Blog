@@ -7,3 +7,7 @@
     padding-bottom: 0px !important;
     padding-left: 4px !important;
 }
+
+.custom-list-bold > .MuiList-root > .MuiListItem-root > .MuiListItemText-root > .MuiTypography-root{
+    font-weight: bold;
+}

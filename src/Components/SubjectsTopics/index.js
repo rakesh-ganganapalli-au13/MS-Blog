@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AutoComplete from "../../Library/AutoComplete";
-import topiccs from "../../Pages/SubjectsContent";
+import topiccs from "../../SubjectsContent";
 import "./style.scss";
 import { changeSubName, changeTopicName } from "./redux/compnent.slice";
 import { useDispatch } from "react-redux";
