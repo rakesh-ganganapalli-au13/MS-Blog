@@ -3,7 +3,7 @@ import { distributedSystems } from "../../../../Utils/images";
 import { OrderList } from "../../../../Components/ContentControl/list";
 import Img from "../../../../Components/ContentControl/image";
 
-const content = <>Update soon</>;
+const content = <>Updating...</>;
 
 const rsa = [
   {

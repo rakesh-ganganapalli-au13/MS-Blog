@@ -18,8 +18,8 @@ import {
 
 const pages = [
   { label: "Home", url: endPoints.home },
-  { label: "About Us", url: endPoints.about },
-  { label: "Contact", url: endPoints.contactUs },
+  { label: "About", url: endPoints.about },
+  { label: "Contact Us", url: endPoints.contactUs },
 ];
 
 function Header() {

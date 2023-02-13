@@ -10,6 +10,7 @@ import Loader from "./Library/Loader";
 import "./Sass/main.scss";
 import ContentCard from "./Components/ContentGrid";
 import CustomText from "./Components/ContentControl/text";
+import Marquee from "./Library/Marquee";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
@@ -23,6 +24,10 @@ function App() {
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <Comp />
         </Box>
+        <Marquee
+          content="This is testing version, if you found any issue please let us
+          know.Thank you."
+        />
         <Routes>
           <Route path="*" element={<Error />} key="404Error" />
 

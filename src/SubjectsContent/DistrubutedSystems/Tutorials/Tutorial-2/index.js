@@ -1,9 +1,20 @@
 import { textVarient } from "../../../../Utils/staticData";
 import { distributedSystems } from "../../../../Utils/images";
-import { OrderList } from "../../../../Components/ContentControl/list";
+import {
+  OrderList,
+  UnorderList,
+} from "../../../../Components/ContentControl/list";
 import Img from "../../../../Components/ContentControl/image";
-
 import CustomGrid from "../../../../Components/ContentGrid";
+
+const asymentricContent = (
+  <>
+    It is cryptographic protocol where sender and receiver use a different
+    secreat key for encryption and decreption, it is a public protocol It has
+    two keys public and private Public key is exposed to every one, sender will
+    use receiver public key to send data.
+  </>
+);
 
 const cryptography = [
   {
@@ -29,6 +40,43 @@ const cryptography = [
   },
 
   {
+    type: "text",
+    variant: textVarient.body1,
+    content: (
+      <>
+        <b>Confusion :</b>
+        It is technique ensure that cipher text not give any clue of the plain
+        text, it is used in symmetric cryptography(block and stream cipher), it
+        is acheived by the substitution technique.
+        <div>ex : ABC {"=>"} XYZ , A is substitute by X,etc..</div>
+      </>
+    ),
+    style: {
+      marginTop: "1%",
+    },
+  },
+
+  {
+    type: "text",
+    variant: textVarient.body1,
+    content: (
+      <>
+        <b>Diffusion :</b>
+        It is technique ensure that cipher text not give any clue of the plain
+        text, it increase redundancy of plain text across row and column ,it is
+        used in symmetric cryptography(block), it is acheived perumutaion
+        technique.
+        <div>ex : ABC {"=>"} BAC , perumutaion of plain text,etc..</div>
+        Confusion and Diffusion both are called{" "}
+        <b>Frastate Statical Script Analysis</b>
+      </>
+    ),
+    style: {
+      marginTop: "1%",
+    },
+  },
+
+  {
     type: "image",
     style: {
       textAlign: "center",
@@ -48,7 +96,7 @@ const cryptography = [
       <>
         Cryptography is two types those are,
         <OrderList
-          list={[<b>Symentric Cryptography</b>, <b>Asymentric Cryptography</b>]}
+          list={[<b>Symmetric Cryptography</b>, <b>Asymmetric Cryptography</b>]}
           position="center"
           width="360"
         />
@@ -59,7 +107,7 @@ const cryptography = [
   {
     type: "title",
     variant: textVarient.heading,
-    content: "What Is Symentric Cryptography?",
+    content: "What Is Symmetric Cryptography?",
     style: {
       textAlign: "center",
       margin: "1%",
@@ -73,6 +121,9 @@ const cryptography = [
       <>
         It is cryptographic protocol where sender and receiver use a single{" "}
         <b>secreat key</b> for encryption and decreption
+        <br />
+        Example algothems : DES(Data encryption standard) ,AES(Advanced
+        encryption standard)
       </>
     ),
   },
@@ -103,10 +154,10 @@ const cryptography = [
                 increased with respect to users. <br />
                 ex : if you add one more user then user "A" will genarates one
                 more secreat key. <br />
-                So <b>O(n)</b> = <b>exponential</b> for symentric cryptography
+                So <b>O(n)</b> = <b>exponential</b> for symmetric cryptography
                 <br />
                 <div style={{ textAlign: "center" }}>
-                  Symentric cryptography is <b>two</b> types
+                  Symmetric cryptography is <b>two</b> types
                 </div>
                 <OrderList
                   list={[<b>Stram cipher</b>, <b>Block cipher</b>]}
@@ -149,11 +200,10 @@ const cryptography = [
     content: (
       <>
         <br />
-        1.Stream cipher will genarate secreat key as long as data
+        1.Stream cipher will genarate secreat key as long as data( for example
+        if data size is 5kb then secreat key also 5kb)
         <br />
         2.It will encrypt and decrypt the all the bits induvudually <br />
-        for example if data size is 5kb then secreat key also 5kb
-        <br />
         3.Secreat key will use only one time(one time pad). <br />
         4.If secreat key will use two times (two time pad) then information will
         easily decrept by hacker <br />
@@ -202,6 +252,7 @@ const cryptography = [
       textDecoration: "underline black",
     },
   },
+
   {
     type: "text",
     variant: textVarient.body1,
@@ -249,6 +300,73 @@ const cryptography = [
                     src={distributedSystems["tutorial-2"].image5}
                     alt={"Ex"}
                     style={{ width: "35vw", height: "70vh" }}
+                  />
+                </>
+              ),
+            },
+          ]}
+          space={0}
+        />
+      </>
+    ),
+  },
+
+  {
+    type: "title",
+    variant: textVarient.heading,
+    content: "Asymmetric cryptography",
+    style: {
+      textAlign: "center",
+      margin: "1%",
+    },
+  },
+
+  {
+    type: "text",
+    variant: textVarient.body1,
+    content: (
+      <>
+        1.It is cryptographic protocol where sender and receiver use{" "}
+        <b>different secreat keys</b> for encryption and decreption.
+        <br />
+        2.It is also called public protocol <br />
+        3.Public key is exposed to every one, sender use receiver public key to
+        encrypted data. <br />
+        4.Receiver use private key to decrypt the data <br />
+        4.O(n) is linear for asymmentric cryptography because for n no.of users
+        the total keys will be 2n <br />
+      </>
+    ),
+  },
+
+  {
+    type: "text",
+    variant: textVarient.body1,
+    content: (
+      <>
+        <br />
+        <CustomGrid
+          grids={[
+            {
+              columns: 6,
+              content: (
+                <>
+                  <Img
+                    src={distributedSystems["tutorial-2"].image6}
+                    alt={"Ex"}
+                    style={{ width: "50vw", height: "50vh" }}
+                  />
+                </>
+              ),
+            },
+            {
+              columns: 6,
+              content: (
+                <>
+                  <Img
+                    src={distributedSystems["tutorial-2"].image7}
+                    alt={"Ex"}
+                    style={{ width: "49vw", height: "100vh" }}
                   />
                 </>
               ),
