@@ -4,9 +4,9 @@ import cryptography from "./Tutorials/Tutorial-2";
 import Rsa from "./Tutorials/Tutorial-3";
 
 const topicsData = {
-  topics: dstTopics,
-  introduction: dst1,
-  cryptography: cryptography,
+  Topics: dstTopics,
+  Introduction: dst1,
+  Cryptography: cryptography,
   "RSA Algothem": Rsa,
 };
 

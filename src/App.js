@@ -25,7 +25,7 @@ function App() {
           <Comp />
         </Box>
         <Marquee
-          content="This is testing version, if you found any issue please let us
+          content="This is beta version, if you found any issue please let us
           know.Thank you."
         />
         <Routes>
